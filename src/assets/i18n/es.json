@@ -1,0 +1,868 @@
+{
+  "next": "Siguiente",
+  "account-list": {
+    "delete": "Borrar"
+  },
+  "add-wallet": {
+    "alert_deriving": {
+      "text": "Derivando tu cuenta"
+    },
+    "account-exists_alert": {
+      "heading": "La cuenta ya existe",
+      "text": "Esta cuenta ya ha sido añadida. Por favor, cambia la derivación para añadir otra dirección (modo avanzado)."
+    },
+    "okay_label": "Ok"
+  },
+  "about": {
+    "label": "Acerca de...",
+    "version": "Versión: ",
+    "code": "Código: "
+  },
+  "shop": {
+    "label": "Tienda AirGap",
+    "page-description_label": "Explora la Tienda AirGap",
+    "page-description_description": "Agrega una capa adicional de seguridad con soluciones de la Tienda AirGap y paga con Cripto",
+    "QR-code_label": "Para visitar, escanea el código QR o ve al siguiente sitio web:",
+    "AirGap-Knox_label": "AirGap Knox",
+    "AirGap-Knox_description": "Con AirGap Knox, puedes desactivar todo tipo de conectividad en tu smartphone a nivel de sistema y crear un entorno absolutamente seguro para AirGap Vault",
+    "AirGap-Recovery-Plate_label": "AirGap Recovery Plate",
+    "AirGap-Recovery-Plate_description": "Graba tu frase de recuperación en acero inoxidable para protegerla del fuego o daños",
+    "promo-description": "Obtén un 10% de descuento en tu primera compra al usar el código promocional: <i>VaultUser23</i>",
+    "copy_label": "Copiar Enlace"
+  },
+  "security-level-self-check": {
+    "heading": "Autoverificación del Nivel de Seguridad",
+    "description": "Determina tu nivel de seguridad verificando tu configuración personal. Al marcar todas las casillas, puedes estar seguro de que has aprovechado todo el potencial de seguridad de AirGap Vault"
+  },
+  "advanced-mode": {
+    "label": "Modo Avanzado",
+    "note_text": "<span class=\"style__strong\">Nota: </span> El Modo Avanzado te brinda acceso a más funciones como <u>Contraseñas BIP39</u> e <u>Identiconos Lifehash</u>"
+  },
+  "distribution-onboarding": {
+    "ask-permission": {
+      "heading": "AirGap es <span class=\"style__strong color__primary\"> no permanente</span>, los Secretos generados no se almacenan y necesitan ser <span class=\"style__strong color__primary\">importados de nuevo</span> después de cada reinicio",
+      "text": "Este software está ideado para generar de forma seguro Secretos, así como para firmar transacciones offline, pero no para almacenar Secretos."
+    },
+    "no-vm": {
+      "heading": "AirGap Vault <span class=\"style__strong color__primary\">no</span> debe ejecutarse en una <span class=\"style__strong color__primary\">maquina virtual</span> si el sistema de base tiene conexión a la red, incluso aunque se haya deshabilitado temporalmente.",
+      "text": "Comprueba que el software está desconectado de cualquier red antes de genera un nuevo secreto o importar uno existente."
+    },
+    "understood_label": "Entendido"
+  },
+  "local-authentication-onboarding": {
+    "heading": "El acceso a tu secreto está disponible con tu <span>huella</span>,  <span>face id</span>o  <span>código PIN</span>,",
+    "text": "Tienes que acceder a tu Secreto para crear una cuenta y firmar transacciones.",
+    "authenticate_label": "Autentificar"
+  },
+  "secret-generate-onboarding": {
+    "heading": "AirGap le pedirá permisos de <span class=\"style__strong color__primary\">cámara</span> y <span class=\"style__strong color__primary\">micrófono</span>para permitir una generación de frase segura.",
+    "text": "Ambos permisos se utilizan para generar una frase más segura",
+    "grant-permission_label": "continuar"
+  },
+  "current-secret": {
+    "label": "Secreto Activo"
+  },
+  "signed-transaction": {
+    "transaction-unreadable": "No pudimos extraer información de esta transacción. Esto no significa que la transacción sea inválida - Asegúrese de saber lo que está haciendo y compruebe que la transacción contiene los datos correctos."
+  },
+  "onboarding-advanced-mode": {
+    "title": "Bienvenido a AirGap"
+  },
+  "installation-type": {
+    "title": "Tipo de Instalación",
+    "setup_label": "¿Cuál es tu tipo de instalación?",
+    "setup_text": "Para configurar correctamente el Vault, indícanos cómo planeas configurar la conectividad de tu dispositivo. Esto nos ayudará a determinar la interacción ideal con otras billeteras",
+    "online_label": "en línea",
+    "online_text": "Este dispositivo está conectado a Internet",
+    "offline_label": "offline",
+    "offline_text": "Este es un dispositivo dedicado sin conexión. Nunca estará conectado a Internet"
+  },
+  "introduction": {
+    "title": "Instalar AirGap Wallet",
+    "header": "Interacción con tu dispositivo {{installationType}}",
+    "online-desc": "Por diseño, AirGap Vault nunca se conecta a ningún servicio en línea. Tus secretos nunca abandonan AirGap Vault y, por lo tanto, están protegidos contra las amenazas en línea. Para verificar tu saldo y realizar transacciones, utiliza la aplicación complementaria, como AirGap Wallet.",
+    "offline-desc": "Por diseño, AirGap Vault nunca se conecta a ningún servicio en línea. Para verificar tu saldo y realizar transacciones, utiliza la aplicación complementaria como AirGap Wallet.",
+    "offline-companion_text": "Instala la aplicación complementaria en un dispositivo con acceso a Internet y asegúrate de que solo se transmita información pública entre las dos aplicaciones. Tus secretos nunca abandonan el Vault de AirGap, protegiéndolos de las amenazas en línea.",
+    "highest": {
+      "label": "Seguridad Alta",
+      "text": "Con el <b>enfoque de dos dispositivos</b> de AirGap el manejo seguro de claves se vuelve más accesible.</p>"
+    },
+    "medium": {
+      "label": "Seguridad Media",
+      "text": "Con el <b>enfoque de dos aplicaciones</b> de AirGap, el manejo seguro de claves se vuelve más accesible."
+    },
+    "vault": {
+      "heading": "AirGap Vault",
+      "text": "La clave privada se genera y se almacena de manera segura en otro dispositivo con la aplicación AirGap Vault. <b>Tienes que instalar AirGap Vault para usar AirGap Wallet</b>"
+    },
+    "wallet": {
+      "heading": "AirGap Wallet",
+      "text": "La aplicación de la billetera solo trata con información pública y es responsable de transmitir las transacciones a la cadena de bloques."
+    },
+    "communication": {
+      "highest_text": "Comunicación unidireccional usando códigos QR",
+      "medium_text": "Comunicación segura gracias al intercambio de información entre aplicaciones. "
+    },
+    "wallet_install_label": "Instalar AirGap Wallet",
+    "continue_label": "Vamos",
+    "skip_label": "Saltar"
+  },
+  "secret-setup": {
+    "heading": "Configuración del Secreto",
+    "generate": {
+      "label": "Generar",
+      "text": "Cree una frase segura usando entropía adicional de la cámara y el micrófono."
+    },
+    "import": {
+      "label": "Importar Frase de Recuperación",
+      "text": "Se admite la contraseña BIP 39"
+    },
+    "social-recovery": {
+      "label": "Importar Recuperación Social"
+    },
+    "dice-roll": {
+      "label": "Generar con Dado",
+      "text": "Tire los dados para generar una frase de recuperación segura y verificable."
+    },
+    "coin-flip": {
+      "label": "Generar con Moneda",
+      "text": "Lance monedas para generar una frase de recuperación segura y verificable."
+    },
+    "advanced": "Generación Avanzada de Entropía",
+    "advanced_warning": "Permite utilizar tiradas de dados o lanzamientos de monedas como métodos alternativos de generación de entropía. Úselos solo si está familiarizado con ellos y conoce los riesgos involucrados. Utilice solo un <span class=\"style__strong\">dado real</span> o una moneda."
+  },
+  "secret-edit": {
+    "title": "Tu Secreto",
+    "name_label": "Nombre",
+    "text": "Dale un nombre a tu Secreto",
+    "fingerprint": "Huella digital",
+    "secret_input_label": "Etiqueta de tu Secreto",
+    "advanced": "Opciones Avanzadas",
+    "security-level": {
+      "heading": "Nivel de Seguridad",
+      "text": "Puedes encriptar tu secreto de forma adicional usando un password."
+    },
+    "passcode": {
+      "label": "Contraseña de encriptación",
+      "text": "Debes entrar esta contraseña cada vez que accedas al secreto, por ejemplo cuando firmes una transacción. Si pierdes esta contraseña deberás importar tu conjunto de 24 palabras."
+    },
+    "passphrase": {
+      "label": "Passphrase BIP39",
+      "text": "La Passphrase BIP39 debe ser introducida cuando se crea una cuenta."
+    },
+    "secret-recovery": {
+      "heading": "Clave de Recuperación del Secreto",
+      "text": "Puede configurar los mecanismos de recuperación de su frase después de la configuración inicial."
+    },
+    "social-recovery": {
+      "label": "Recuperación Social",
+      "text": "Genera un numero secreto de partes <br /> para distribuir entre tus contactos."
+    },
+    "interaction": {
+      "label": "Interacción entre Bóveda y Wallet",
+      "text": "Seleccione si la Vault y la Wallet están instaladas en el mismo dispositivo o en dispositivos separados."
+    },
+    "secret-recovery-key": {
+      "label": "Clave de Recuperación del Secreto",
+      "description": "Esta llave de recuperación garantiza la recuperación de tu Secreto de un almacenamiento corrupto. Necesitarás esta llave de recuperación, tu huella, pin y patrón de desbloqueo. Guárdala de forma segura como tu frase de recuperación.",
+      "generate-text": "Genera una clave recuperación para tu secreto",
+      "reset-text": "Resetea la clave de recuperación para tu secreto",
+      "alert": {
+        "title": "Clave de Recuperación del Secreto",
+        "done": "Hecho",
+        "copy": "Copiar"
+      },
+      "copied": "Clave de Recuperación copiada",
+      "reset-error": "No se puede establecer la Clave de Recuperación"
+    },
+    "bip85": {
+      "generate": "Generar BIP85 Secundaria",
+      "text": "Generar de forma segura una derivación secundaria de tu derivación primaria."
+    },
+    "show-mnemonic": {
+      "label": "Mostrar Secreto",
+      "text": "Muestra el Secreto asociado a este Secreto",
+      "alert": {
+        "title": "Mostrar Secreto",
+        "message": "Tenga en cuenta que la frase siempre debe mantenerse en privado, ya que otorga acceso completo a tus fondos. Bajo ninguna circunstancia tome una captura de pantalla o una foto. Asegúrese de estar en un lugar seguro donde nadie más pueda ver la pantalla.",
+        "understood": "Entiendo"
+      },
+      "copied": "Clave de Recuperación copiada",
+      "reset-error": "No se puede establecer la Clave de Recuperación"
+    },
+    "confirm_label": "Confirmar",
+    "error_alert": {
+      "title": "Error",
+      "message": "¡Algo salió mal!",
+      "abort-button_label": "Abortar",
+      "retry-button_label": "Reintentar"
+    }
+  },
+  "social-recovery-generate": {
+    "intro-state-1-title": "Recuperación Social",
+    "intro-state-1-text1": "Con la Recuperación Social puedes crear partes secretas y distribuirlas entre los contactos en los que confias.",
+    "intro-state-1-text2": "Puedes recuperar un Secreto perdido si tienes un numero predeterminado de partes del Secreto.",
+    "intro-state-2-title": "Distribuye tus partes",
+    "intro-state-2-text1": "La idea es tener diferentes partes, que por ellas mismas son de ninguna utilidad pero todas juntas permiten restaurar tu secreto.",
+    "intro-state-2-text2": "Puedes distribuir estas partes entre diferentes localizaciones o personas de tu confianza.",
+    "intro-state-2-text3": "Así que no te preocupes, tu abuela no podrá restaurar tu frase con la parte que guardaste en su casa.",
+    "intro-state-3-title1": "Cómo funciona la Recuperación Social",
+    "intro-state-3-title2": "Elige el número de partes",
+    "intro-state-3-text1": "Empieza por especificar el numero de partes que deseas crear. También debes especificar cuantas partes son necesarias para recuperar el secreto.",
+    "intro-state-3-title3": "Almacena y verifica cada parte",
+    "intro-state-3-text2": "Se van a crear diferentes Recuperaciones Sociales para ti. Anota cada  una de ellas. En el siguiente paso tendrás que verificar que las has anotado correctamente. ",
+    "intro-state-3-title4": "No debe ser el mismo que tu Passphrase.",
+    "intro-state-3-text3": "Aunque pudieran parecer iguales, una Recuperación Social no es lo mismo que tu Passphrase.",
+    "setup-state-1-text1": "Selecciona el numero de partes que son necesarias para recuperar tu secreto",
+    "setup-state-2-text1": "Creando {{numberOfShares}} partes",
+    "setup-state-2-text2": "Selecciona el numero de partes que son necesarias para recuperar tu secreto",
+    "rules-heading": "Ten en cuenta esta regla",
+    "rules-text1": "Escribe estas palabras en  un papel o una placa de metal",
+    "rules-text2": "Las palabras deben estar en el orden correcto",
+    "rules-text3": "Revisa la ortografía de cada palabra",
+    "rules-text4": "Guarde la frase escrita en un lugar seguro",
+    "rules-text5": "No tome una captura de pantalla o foto y no fotocopie su frase",
+    "rules-text6": "No suba su frase a la nube",
+    "share-show-heading": "Escriba todas las palabras en una hoja de papel, recuerde seguir las reglas. Recomendamos enumerar cada palabra.",
+    "finish-title": "Recuperación Social generada correctamente.",
+    "finish-header": "Has creado con éxito un sistema de recuperación social de tu Secreto.",
+    "finish-warning-title": "Recuerda",
+    "finish-warning-paragraph": "Has creado {{ numberOfShares }} partes, de las cuales tu necesitas al menos  {{ sharesRequired }} para recuperarla. ",
+    "finish-button": "Finalizar"
+  },
+  "secret-service": {
+    "alert": {
+      "title": "Duplicar Secreto",
+      "message": "Ya has añadido un Secreto a esta Llave de Recuperación"
+    }
+  },
+  "secret-edit-delete-popover": {
+    "title": "Confirma Eliminar el Secreto",
+    "text": "¿Quieres eliminar este Secreto? Confirma que tienes una Copia de Seguridad o perderás el acceso a tus fondos.",
+    "cancel_label": "Cancelar",
+    "delete_label": "Borrar"
+  },
+  "secret-generate": {
+    "heading": "Generando tu Secreto.",
+    "text": "Para esto usamos video, audio, sistema táctil y más para añadir entropia adicional a la generación de tu Secreto.",
+    "description": "Mueve tu dispositivo para grabar audio, video y usar el acelerómetro hasta que los iconos estén llenos.",
+    "continue_label": "Continuar"
+  },
+  "secret-import": {
+    "title": "Importar secreto",
+    "text": "Puedes importar un Secreto ya generado. Completa con las palabras de tu Secreto.",
+    "placeholder": "esposa pulpa isla ...",
+    "warning": "Por favor verifica doblemente tu Secreto.",
+    "import_label": "Importar",
+    "passphrase": "Para usar la función de contraseña BIP-39, debes activar el Modo Avanzado en la configuración. Si está habilitado, la contraseña se requiere para cada transacción."
+  },
+  "secret-rules": {
+    "title": "Lee detenidamente",
+    "heading": "Comprueba que sigues estas reglas",
+    "text": "Hemos generado tu Secreto, es una secuencia de palabras.",
+    "description": "Por favor, confirma que entiendes estas reglas para estar seguro de que siempre tendrás acceso a tus cuentas.",
+    "confirm": "Por favor, tenga en cuenta y marque las casillas:",
+    "rules-list": {
+      "item-1_text": "Escribe estas palabras en  un papel o una placa de metal",
+      "item-2_text": "Las palabras necesitan estar en un orden especifico. ",
+      "item-3_text": "Revisa la ortografía de cada palabra",
+      "item-4_text": "Guarda el papel en un lugar seguro",
+      "item-5_text": "No tome una captura de pantalla o foto y no escanee su clave",
+      "item-6_text": "No suba su clave a la nube"
+    },
+    "understood_label": "Entendido"
+  },
+  "secret-show": {
+    "title": "Esta es su frase de recuperación",
+    "text": "Escriba todas las palabras en una hoja de papel, recuerde seguir las reglas.",
+    "fingerprint": "Huella digital",
+    "next-step_label": "Siguiente",
+    "too-fast_alert": {
+      "title": "¡Eso fue rápido!",
+      "heading": "¿Estás seguro de que no eres un súper humano?",
+      "text": "Confirma que has seguido todas las reglas y no hiciste nada que no fuese anotar tu Secreto en un papel. ",
+      "wait_label_p1": "Por favor espere hasta por lo menos",
+      "wait_label_p2": "Las \"s\" no están disponibles."
+    }
+  },
+  "secret-validate": {
+    "title": "Verifique su frase de recuperación",
+    "text": "Haga coincidir el orden de su frase de recuperación seleccionando las palabras correctas."
+  },
+  "interaction-selection-settings": {
+    "header": "Configuración",
+    "title": "Interacción con la Wallet",
+    "heading": "¿Cómo le gustaría interactuar con AirGap Wallet?",
+    "selector": {
+      "always": "Preguntar siempre",
+      "same-device": "Cambiar Aplicación ",
+      "offline-device": "Escaneando código QR"
+    },
+    "connectivity_text": "Dado que este dispositivo tiene conexión, puedes configurar las opciones de interacción con otras billeteras según tus necesidades. Para habilitar la función de cambio de aplicaciones, instala la aplicación de billetera AirGap.",
+    "continue_label": "Continuar",
+    "description": "Siempre puedes cambiar tus preferencias en la configuración"
+  },
+  "language-selection-settings": {
+    "title": "Selección de Idioma",
+    "heading": "Por favor elige tu idioma preferido",
+    "selector": {
+      "device": "Idioma de tu dispositivo",
+      "en": "Inglés",
+      "de": "Alemán (AI traducido)",
+      "es": "Español (AI traducido)",
+      "ru": "Ruso",
+      "fr": "francés (AI traducido)",
+      "pt_BR": "Portugués (Brasil)",
+      "zh_CN": "Chino (China)"
+    },
+    "continue_label": "Continuar",
+    "description": "Siempre puedes cambiar tus preferencias en la configuración"
+  },
+  "verify-key": {
+    "incorrect_text": "Tu Secreto no coincide con el generado. Confirma que has elegido las palabras correctas. <br /> Para corregir un error selecciona la palabra incorrecta y elige la correcta.",
+    "success_text": "Parte verificada de forma satisfactoria!",
+    "continue_label": "Continuar"
+  },
+  "social-recovery-import": {
+    "title": "Recuperación Social",
+    "text": "Para recuperar tu secreto a partir de tus partes, indica con cuántas partes deseas recuperar tu secreto. Ten en cuenta que solo podrás recuperar tu secreto con éxito si tienes tantas partes para la recuperación como hayas definido en la configuración de recuperación social.",
+    "share-recovery": {
+      "heading": "Numero de Partes de la Recuperación",
+      "label": "Numero de parte"
+    },
+    "recover_label": "Recuperar"
+  },
+  "social-recovery-setup": {
+    "title": "Recuperación Social",
+    "text": "Con la Recuperación Social puedes crear partes secretas y distribuirlas a contactos sociales de confianza. Puedes recuperar un secreto perdido si tienes un número determinado de estas partes secretas.",
+    "secret-shares": {
+      "label": "Partes Secretas",
+      "text": "Puedes definir la cantidad de partes que deseas generar y el número de partes necesarias para una recuperación exitosa de tu secreto."
+    },
+    "shares-number_label": "Número de partes secretas",
+    "shares-recovery_label": "Numero de Partes de la Recuperación",
+    "start_label": "Empieza",
+    "back_label": "Atrás",
+    "next_label": "Siguiente"
+  },
+  "social-recovery-show-share": {
+    "title": "Recuperación Social",
+    "secret-shares_label": "Parte secreta {{currentShare}} de {{shareLength}}",
+    "text": "Escriba todas las palabras en una hoja de papel, recuerde seguir las reglas."
+  },
+  "social-recovery-validate-share": {
+    "title": "Recuperación Social",
+    "text": "Teclea cada palabra en el orden correcto:"
+  },
+  "isolated-module" : {
+    "text": "¿No puedes encontrar tu moneda favorita? Crea un Módulo Aislado para integrarla"
+  },
+  "contact-book": {
+    "label_add": "Agregar",
+    "label_edit": "Editar",
+    "label_cancel": "Cancelar",
+    "label_finish": "Finalizar",
+    "label_close": "Cerrar",
+    "label_sort_by": "Ordenar por",
+    "label_search_contacts": "Buscar contactos",
+    "label_added_by": "agregado por",
+    "label_name": "Nombre",
+    "label_address": "Dirección",
+    "label_transactions": "Transacciones",
+    "label_creation_date": "Fecha de Creación",
+    "label_delete_entry": "Eliminar Entrada de Dirección",
+    "title_settings": "Configuraciones de la Agenda de Direcciones",
+    "label_enable_suggestions": "Habilitar Sugerencias",
+    "label_enable_address_book": "Habilitar Agenda de Direcciones",
+    "button_delete_entries": "Restablecer Entradas",
+    "title_address_book": "Agenda de Direcciones",
+    "label_welcome_personal_address_book": "Bienvenido a tu agenda de direcciones personal",
+    "label_this_allows_to": "Esto te permite",
+    "label_indentify_addresses_you_interact": "Identificar direcciones con las que interactúas",
+    "label_store_manage_entries": "Almacenar y gestionar entradas de dirección",
+    "label_look_transactions_histories": "¡Mira historias de transacciones relevantes y mucho más!",
+    "label_add_address_entries": "Agregar Entradas de Dirección",
+    "label_several_ways": "Hay varias formas de agregar nuevas entradas a tu agenda de direcciones:",
+    "label_scan_qr": "Escanear el código QR de la dirección",
+    "label_manual_entry": "Entrada Manual",
+    "label_recommended_by_us": "Recomendado por nosotros",
+    "label_while_signing": "Al firmar transacciones",
+    "label_recommendations": "Recomendaciones",
+    "label_recommendation_on_who": "Haremos recomendaciones sobre quién agregar basadas en las direcciones con las que interactúas con frecuencia",
+    "label_suggestions": "Sugerencias",
+    "label_note_disable": "Nota: Puedes desactivar esta opción más tarde en la configuración"
+  },
+  "contacts-delete-popover": {
+    "title": "Restablecer Entradas",
+    "text": "Esta acción eliminará todas tus entradas guardadas. ¿Quieres continuar?",
+    "cancel_label": "Cancelar",
+    "delete_label": "Ok"
+  },
+  "contact-book-scan": {
+    "title": "Escáner de Códigos QR de la Agenda de Direcciones",
+    "text": "Escanear un código QR de una dirección para agregarla a tus contactos",
+    "empty-state_heading": "Para escanear códigos QR, AirGap Vault necesita permiso de la <span class=\"style__strong color__primary\">cámara</span>.",
+    "grant-permission_label": "continuar"
+  },
+  "tab-scan": {
+    "title": "Escaneo de QR",
+    "text": "Escanea un código QR de AirGap Wallet",
+    "multi-qr_text": "Esta transacción consiste en multiples códigos QR. Apunta tu cámara hacia los códigos hasta que todos sean escaneados.",
+    "empty-state_heading": "Para escanear códigos QR, AirGap Wallet necesita el <span class=\"style__strong color__primary\">permiso camara</span>.",
+    "grant-permission_label": "continuar"
+  },
+  "tab-settings": {
+    "about": "Acerca de",
+    "shop": "Tienda AirGap",
+    "title": "Ajustes",
+    "information_label": "Información",
+    "faq_label": "FAQ",
+    "feedback_label": "Feedback",
+    "github_label": "GitHub",
+    "twitter_label": "Twitter",
+    "telegram_label": "Telegram",
+    "discord_label": "Discord",
+    "documentation_label": "Documentación",
+    "secrets_label": "Secretos",
+    "add-settings_label": "Añadir Secreto",
+    "interaction-options_label": "Opciones de interacción.",
+    "paste-from-clipboard_label": "Pegar desde el portapapeles",
+    "qr-advanced-settings_label": "Ajustes QR",
+    "interaction-settings_label": "Preferencias de interacción",
+    "preferred-language_label": "Idioma deseado",
+    "advanced-settings_label": "Opciones Avanzadas",
+    "bip39_wordlist_label": "Lista de palabras BIP39",
+    "error-history_label": "Historial de Errores",
+    "danger-zone_label": "Zona de Peligro",
+    "welcome-onboarding_label": "Bienvenido",
+    "disclaimer_label": "Descarga de Responsabilidad",
+    "installation-type_label": "Tipo de Instalación",
+    "advanced-mode-type_label": "Opciones Avanzadas",
+    "advanced-features_label": "Funciones Avanzadas",
+    "address_book_label": "Libro de Direcciones",
+    "address_book_settings_label": "Configuración del Libro de Direcciones",
+    "settings_label": "Configuración",
+    "actions_label": "Acciones",
+    "vault-interaction_label": "Interacción con el Almacén",
+    "security-level-self-check_label": "Verificación del Nivel de Seguridad"
+  },
+  "vault-interaction-settings": {
+    "heading": "Interacción con el Vault",
+    "title": "Interacción con el Vault",
+    "device-connected_text": "El dispositivo está conectado a internet",
+    "note_text": "<span class=\"style__strong\">Nota: </span> Estas configuraciones NO alteran la conexión de tu dispositivo"
+  },
+  "tab-secrets": {
+    "title": "Secretos",
+    "add-secret_label": "Añadir Secreto",
+    "search_placeholder": "Buscar Secreto",
+    "tab-secret-popover": {
+      "title": "Gestión de Secretos",
+      "add-secret_label": "Agregar Secreto",
+      "sync-all_label": "Sincronizar Todas las Cuentas con AirGap Wallet"
+    }
+  },
+  "tab-wallets": {
+    "title": "Cuentas",
+    "search_placeholder": "Buscar Divisa",
+    "empty-state_text": "Crea una nueva cuenta seleccionado una divisa y sincronízala con AirGap Wallet.",
+    "add-wallet_label": "Agregar Cuenta",
+    "delete-accounts_label": "Eliminar Cuentas",
+    "cancel_label": "Cancelar",
+    "generate-recovery-key": {
+      "title": "Copia de la Clave de Recuperación del Secreto",
+      "description": "Para asegurar la recuperación de tu Secreto, una copia de seguridad de la llave de recuperación del secreto es necesaria."
+    },
+    "incompatible-qr_alert": {
+      "title": "Código QR no compatible",
+      "text": "Este código QR no es una transacción pendiente de firma.",
+      "okay_label": "Ok"
+    },
+    "no-secret_alert": {
+      "title": "Cuenta no encontrada",
+      "text": "No tienes ninguna cuenta compatible para esta clave pública en AirGap. Por favor, importa tu clave secreta y crea la cuenta correspondiente para firmar esta transacción.",
+      "okay_label": "Ok"
+    },
+    "raw-tx_alert": {
+      "title": "Selecciona Cuenta",
+      "okay_label": "Ok"
+    }
+  },
+  "tabs": {
+    "wallets": "Cuentas",
+    "scanner": "Scanner",
+    "secrets": "Secretos",
+    "settings": "Ajustes"
+  },
+  "deserialized-detail": {
+    "sign_text": "Estás firmando:",
+    "transaction": {
+      "title": "Firmar Transacción",
+      "button_label": "Firmar Transacción",
+      "unreadable_warning": "No pudimos extraer información de esta transacción. Esto no significa que la transacción sea inválida - Por favor, asegúrate de saber lo que estás haciendo y que puedes verificar que esta transacción contiene los datos correctos."
+    },
+    "message": {
+      "title": "Firmar Mensaje",
+      "button_label": "Firmar Mensaje"
+    },
+    "loader": {
+      "sign-transaction": {
+        "message": "Firmando Transacción..."
+      },
+      "sign-message": {
+        "message": "Firmando Mensaje..."
+      },
+      "generic": {
+        "message": "Cargando..."
+      }
+    },
+    "alert": {
+      "bip39-passphrase": {
+        "header": "Passphrase BIP39",
+        "message": "Si estás usando Passphrase BIP39, introdúcela aquí. ",
+        "input-placeholder_label": "Passphrase",
+        "button_label": "Ok"
+      },
+      "bip39-passphrase-error": {
+        "header": "Passphrase BIP39",
+        "message": "Las direcciones públicas no coinciden. ¿Has introducido la Passphrase BIP-39 correcta?",
+        "button_label": "Ok"
+      },
+      "secret-not-found-error": {
+        "header": "Secreto no encontrado",
+        "message": "No se encontró un Secreto para esta clave pública.",
+        "button_label": "Ok"
+      },
+      "unknown-error": {
+        "header": "Error",
+        "message": "¡Algún error ha ocurrido!",
+        "button_label": "Ok"
+      }
+    },
+    "signing_account": "Estás firmando con una cuenta de <span class=\"style__strong color__primary\">{{secretLabel}}</span> "
+  },
+  "transaction-signed": {
+    "title": "Transacción firmada",
+    "heading": "Esta es tu transacción firmada, escanéala con <span class=\"style__strong color__primary\">AirGap Wallet</span>.",
+    "done_label": "Hecho"
+  },
+  "touch-entropy": {
+    "text": "Dibuja formas con tu dedo."
+  },
+  "wallet-address": {
+    "title": "Dirección ",
+    "address_label": "Dirección:",
+    "path_label": "Derivation Path:",
+    "sync_label": "Sincronizar Cuenta",
+    "done_label": "Hecho",
+    "copy-address_modal": {
+      "text": "Dirección copiada al portapapeles"
+    },
+    "alert": {
+      "wallet-not-migrated": {
+        "header": "Algunas cuentas necesitan actualizarse",
+        "message": "No se puede continuar, por favor actualiza o vuelve a agregar la cuenta primero.",
+        "button_label": "Ok"
+      }
+    }
+  },
+  "interaction-selection": {
+    "title": "Interacción con la Wallet",
+    "heading": "¿Cómo te gustaría interactuar con AirGap Wallet?",
+    "same-device_label": "Cambiar Aplicación ",
+    "offline-device_label": "Escaneo de QR"
+  },
+  "wallet-edit-delete-popover": {
+    "settings_label": "Ajustes",
+    "copy_label": "Copiar dirección",
+    "copy_sync_code": "Copiar código de sincronización",
+    "show_address_qr": "Mostrar Código QR",
+    "confirm_address_copy": "La dirección fue copiada en tu portapapeles.",
+    "confirm_sync_code_copy": "Sync code was copied to your clipboard",
+    "account-removal_alert": {
+      "title": "Confirmar eliminación de cuenta.",
+      "text": "¿Deseas eliminar esta cuenta? Siempre puedes agregarla de nuevo más tarde si conoces su ruta de derivación correcta.",
+      "cancel_label": "Cancelar",
+      "delete_label": "Borrar"
+    }
+  },
+  "wallet-select-coins": {
+    "title": "Agregar Cuenta",
+    "select-type": {
+      "label": "Seleccionar el Tipo de Cuenta",
+      "single-address_label": "Monedero de Dirección Única",
+      "hd-wallet_label": "HD Wallet"
+    },
+    "advanced_label": "Opciones Avanzadas",
+    "custom-path": {
+      "label": "Derivación customizada",
+      "placeholder": "Derivación customizada"
+    },
+    "create_label": "Crear"
+  },
+  "wallet-share": {
+    "title": "Emparejar Cuenta",
+    "heading": "Escanea este código QR con {{walletName}}",
+    "text": "Este código QR incluye la clave pública, tu dirección y el tipo de moneda.",
+    "same-device_label": "Sincronización en el mismo dispositivo",
+    "done_label": "Hecho"
+  },
+  "wallet-share-select": {
+    "title": "Sincronizar Cuenta",
+    "heading": "Selecciona las cuentas que deseas sincronizar con <span class=\"style__strong color__primary\">AirGap Wallet</span>.",
+    "sync_label": "Sincronizar",
+    "alert": {
+      "wallets-not-migrated": {
+        "header": "Algunas cuentas necesitan actualizarse",
+        "message": "No se puede continuar, por favor actualiza o vuelve a agregar la cuenta primero.",
+        "button_label": "Ok"
+      },
+      "excluded-legacy-accounts": {
+        "header": "Algunas cuentas necesitan actualizarse",
+        "message": "Algunas de las cuentas seleccionadas no pueden ser sincronizadas y deben ser actualizadas o agregadas de nuevo. Todavía puedes sincronizar el resto de las cuentas.",
+        "button-accept_label": "Sincronizar",
+        "button-reject_label": "Cancelar"
+      },
+      "unknown-error": {
+        "header": "Error",
+        "message": "¡Algo salió mal!",
+        "button_label": "Ok"
+      }
+    }
+  },
+  "warnings-modal": {
+    "root": {
+      "title": "Tu dispositivo está rooteado",
+      "description": "Parece que has rooteado tu dispositivo. Aunque creemos que esto es genial, debilita significativamente la seguridad de tu dispositivo y múltiples mecanismos de AirGap pueden ser eludidos por otras aplicaciones. Por lo tanto, AirGap no puede ejecutarse en este dispositivo."
+    },
+    "screenshot": {
+      "title": "Captura detectada",
+      "description": "Parece que acabas de tomar una captura de pantalla. Asegúrate de nunca tomar una captura de pantalla ya que podrías exponer tu clave secreta."
+    },
+    "secure-storage": {
+      "title": "Dispositivo inseguro",
+      "description": "Es necesario configurar tu pantalla de bloqueo para cifrar y proteger adecuadamente tus secretos. Después de asegurar tu dispositivo, por favor cierra y reinicia AirGap.",
+      "button-text_label": "Dispositivo Seguro"
+    },
+    "network": {
+      "title": "Conexión de Red detectada",
+      "description": "Parece que ha conectado este dispositivo a una red. La aplicación de AirGap no tiene privilegios de red, pero es mejor desconectar el dispositivo por completo de cualquier red.",
+      "button": "Firmar Mensaje"
+    },
+    "disclaimer": {
+      "title": "Descarga de Responsabilidades de AirGap",
+      "text": "Tú, como usuario, aceptas y reconoces este protocolo y toda la información proporcionada en su totalidad. Tú, como usuario, confirmas que el contenido de este documento ha sido revisado, probado y comprendido por tu propia cuenta.",
+      "disclaimer-list": {
+        "text": "En la medida máxima permitida por la ley aplicable:",
+        "item-1_text": "Todos los servicios proporcionados por Papers AG, sus empleados, trabajadores autónomos u otros subcontratistas se brindan sin representación ni garantía de ningún tipo.",
+        "item-2_text": "Papers AG renuncia a toda responsabilidad directa e indirecta por los daños que puedan ocurrir bajo, o en conexión con, este protocolo, especialmente, pero no limitado a la pérdida o daño de datos, pérdida de ganancias, productos o sistemas comprometidos/hackeados y/o fondos monetarios robados o desaparecidos."
+      },
+      "description": "Usted comprende los riesgos involucrados en este software, incluyendo pero no limitado a la pérdida de su secreto, claves privadas y acceso a sus fondos.",
+      "understood_label": "Entiendo y Acepto"
+    }
+  },
+  "bip85-generate": {
+    "title": "Generar BIP85",
+    "text": "BIP85 te permite derivar de manera segura una nueva mnemónica a partir de tu mnemónica principal. Mientras tengas acceso a tu mnemónica principal, siempre podrás volver a generar tus mnemónicas hijas.",
+    "mnemonic-length": "Longitud de la semilla",
+    "index": "Indice",
+    "bip85-input-app-advance-mode":"Indice (0-2147483647)",
+    "generate": "Generar",
+    "advanced_label": "Opciones Avanzadas",
+    "bip39-passphrase": "Passphrase BIP-39",
+    "bip39-passphrase-reveal": "Mostrar Passphrase",
+    "alert": {
+      "header": "Passphrase BIP-39",
+      "message": "Estableciste una frase de contraseña BIP39. ¡Deberás ingresar esta frase de contraseña nuevamente cuando intentes derivar la misma clave hija!",
+      "understand": "Entiendo"
+    }
+  },
+  "bip85-show": {
+    "title": "Mostrar detalles de BIP85",
+    "text": "Escriba todas las palabras en un trozo de papel. Tendrá que verificar la mnemónica en la siguiente página.",
+    "mnemonic-length": "Longitud de la semilla",
+    "index": "Indice",
+    "fingerprint": "Huella digital",
+    "add": "Añadir Secreto"
+  },
+  "message-signing-request": {
+    "title": "Mensaje firmado",
+    "payload_label": "Mensaje a firmar. Asegúrate de saber lo que estás firmando.",
+    "blake2b_hash": "El hash Blake2b del mensaje en Ledger.",
+    "heading": "Este es tu mensaje firmado, escanéalo con <span class=\"style__strong color__primary\">AirGap Wallet</span>.",
+    "sign_button": "Firmar Mensaje",
+    "copy_label": "Copiar mensaje codificado"
+  },
+  "message-signing-response": {
+    "text": "Mostrar detalles del mensaje firmado"
+  },
+  "qr-settings-page": {
+    "title": "Settings de QR"
+  },
+  "select-account": {
+    "message-signing": {
+      "title": "Seleccionar Cuenta",
+      "heading": "Por favor selecciona una cuenta para escanear este mensaje ",
+      "placeholder": "Buscar por identificador"
+    },
+    "psbt": {
+      "title": "Seleccionar Cuenta",
+      "heading": "Por favor seleccione una cuenta para firmar este PSBT",
+      "placeholder": "Buscar por identificador"
+    }
+  },
+  "unsigned-transaction": {
+    "sign-tx_label": "Firmar Transacción"
+  },
+  "link-page": {
+    "scan-qr": "Escanea el código QR para abrir el enlace en un dispositivo conectado a Internet.",
+    "copy_label": "Copiar enlace",
+    "link-clipboard_label": "Enlace copiado al portapapeles"
+  },
+  "migration": {
+    "title": "Actualización de Cuentas",
+    "heading": "Migrar cuentas",
+    "list": {
+      "header": "Los siguientes secretos y cuentas se actualizarán para admitir el nuevo proceso de incorporación simplificado. <br /> <br /> <strong>Nota: Es posible que se le solicite autenticación y una contraseña, si se ha configurado para alguno de los secretos o cuentas que se muestran. </strong>"
+    },
+    "button-run_label": "Actualizar",
+    "button-done_label": "Hecho",
+    "alert": {
+      "paranoia-info": {
+        "header": "Contraseña de encriptación",
+        "message": "Parece que ha establecido una contraseña de cifrado para asegurar adicionalmente {{label}}..</span>. YEs posible que se le solicite proporcionarla durante la actualización. Si no desea actualizar este secreto en este momento, puede omitirlo.",
+        "button-ok_label": "Ok",
+        "button-skip_label": "Omitir"
+      },
+      "bip39-passphrase": {
+        "header": "Passphrase BIP-39",
+        "message": "Si has establecido una frase de contraseña BIP-39 <span class=\"style__strong color__primary\">{{address}} ({{protocol}})</span>,  ingrésala aquí o salta la actualización de esta cuenta.",
+        "input-placeholder_label": "Passphrase",
+        "button-ok_label": "Ok",
+        "button-skip_label": "Omitir"
+      },
+      "unknown-error": {
+        "header": "Error",
+        "message": "¡Algo salió mal! Intenta nuevamente.",
+        "button_label": "Ok"
+      }
+    }
+  },
+  "danger-zone": {
+    "label": "Zona de Peligro",
+    "description": "Las acciones en esta página están destinadas únicamente para usuarios avanzados. Por favor, tenga en cuenta las consecuencias si utiliza una de las siguientes funciones.",
+    "wipe_label": "Resetear AirGap Vault",
+    "wipe": {
+      "alert": {
+        "title": "Borrar Bóveda.",
+        "message": "Esta acción borrará todos tus secretos y restablecerá AirGap Vault a su configuración de fábrica.<br /><br /><b> Asegúrate de tener una copia de seguridad de todas tus frases de recuperación. </b>",
+        "cancel": "Cancelar",
+        "ok": "Ok"
+      }
+    },
+    "wipe-error": {
+      "alert": {
+        "title": "Error",
+        "message": "Se produjo un error al intentar borrar la aplicación. Si este error persiste, desinstale y elimine la aplicación de su dispositivo.",
+        "ok": "Ok"
+      }
+    },
+    "isolated-modules_label": "Módulos Aislados"
+  },
+  "secret-generate-dice-roll": {
+    "title": "Lanzar dados",
+    "label": "Generar Secreto lanzando monedas.",
+    "description": "Generar entropía con tiradas de dados es una característica avanzada. Te permite proporcionar tu propia entropía y generar una frase de recuperación verificable. ¡Solo utiliza esta función si sabes cómo hacerlo!",
+    "status": "\"{{ inputLength }}\" de al menos 99 tiradas ({{ entropyBits }} bits de entropía)",
+    "type-alert": {
+      "header": "Seleccionar tipo de dados",
+      "message": "Hay múltiples estándares sobre cómo se pueden interpretar las entradas de tiradas de dados. Seleccione uno de los tipos a continuación si desea verificar su mnemónico con otra herramienta.",
+      "default": "Por defecto",
+      "coldcard": "ColdCard"
+    }
+  },
+  "secret-generate-coin-flip": {
+    "title": "Lanzar monedas",
+    "label": "Generar Secreto lanzando monedas.",
+    "description": "Generar entropía mediante lanzamientos de monedas es una función avanzada. Te permite proporcionar tu propia entropía y generar una frase de recuperación verificable. ¡Solo utiliza esta función si sabes cómo usarla!",
+    "status": "\"{{ inputLength }}\" de 256 lanzamientos de moneda ({{ inputLength }} bits de entropía)",
+    "head": "Cara",
+    "tail": "Cruz"
+  },
+  "error-history": {
+    "title": "Historial de errores",
+    "empty_label": "El historial de errores está vacío! 🎉",
+    "details_label": "Detalles"
+  },
+  "wordlist": {
+    "title": "Lista de Palabras",
+    "search_placeholder": "Buscar..."
+  },
+  "keyboard": {
+    "paste": "Pegar",
+    "add": "Agregar Palabra",
+    "delete": "Eliminar Palabra",
+    "shuffle": "Mezclar Teclas",
+    "mask": "Mascarar Texto",
+    "word_list": "Mostrar Lista de Palabras"
+  },
+  "isolated-modules": {
+    "loader_message": "Cargando..."
+  },
+  "isolated-modules-list-page": {
+    "title": "Módulos Aislados",
+    "items": {
+      "search_placeholder": "Buscar módulos aislados"
+    },
+    "alert": {
+      "add": {
+        "failed": {
+          "header": "Error al Agregar Módulo",
+          "message": "Algo salió mal. Por favor, inténtalo de nuevo.",
+          "ok_label": "Ok"
+        }
+      }
+    }
+  },
+  "isolated-modules-details-page": {
+    "button": {
+      "install_label": "Instalar",
+      "update_label": "Actualizar"
+    },
+    "popover": {
+      "remove_label": "Eliminar"
+    },
+    "alert": {
+      "remove": {
+        "header": "Quitar módulo",
+        "message": "¿Está seguro de que desea eliminar este módulo?",
+        "cancel_label": "Cancelar",
+        "proceed_label": "Eliminar"
+      },
+      "update": {
+        "generic": {
+          "header": "Error en la actualización del módulo",
+          "message": "¡Algo salió mal! El módulo no se pudo actualizar.",
+          "ok_label": "De acuerdo"
+        },
+        "load-failed": {
+          "header": "Error en la actualización del módulo",
+          "message": "¡Algo salió mal! No se pudo cargar el nuevo módulo.",
+          "ok_label": "De acuerdo"
+        },
+        "different-public-key": {
+          "header": "Error en la actualización del módulo",
+          "message": "No puedes actualizar este módulo con el paquete seleccionado, los autores (claves públicas) son diferentes.",
+          "ok_label": "De acuerdo"
+        }
+      }
+    }
+  },
+  "accounts-list-edit-popover": {
+    "title": "Settings",
+    "add-account_label": "Add Account",
+    "secret-management_label": "Secret Management",
+    "sync-all_label": "Sync All Accounts With AirGap Wallet",
+    "delete_label": "Delete Accounts"
+  }
+}

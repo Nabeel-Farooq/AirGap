@@ -1,0 +1,48 @@
+<ion-header class="ion-no-border" no-shadow>
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{ 'tab-scan.title' | translate }}</ion-title>
+    <ion-text slot="end" *ngIf="isMultiQr">{{ percentageScanned | percent}}</ion-text>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content forceOverscroll="false" [class.transparent]="hasCameraPermission | async">
+  <ion-grid fixed="true" class="ion-no-padding">
+    <ion-text color="secondary">
+      <p class="ion-padding ion-no-margin">
+        <ng-container *ngIf="!isMultiQr">{{ 'tab-scan.text' | translate }}</ng-container>
+        <ng-container *ngIf="isMultiQr">{{ 'tab-scan.multi-qr_text' | translate }}</ng-container>
+      </p>
+    </ion-text>
+
+    <ion-progress-bar *ngIf="isMultiQr" style="height: 8px" color="light" [value]="percentageScanned"></ion-progress-bar>
+
+    <ion-row *ngIf="hasCameraPermission | async" class="row--height__100 ion-justify-content-center ion-align-items-center">
+      <ion-col class="guides--container content--align__center-center">
+        <img class="guides--container__img" src="./assets/img/qr_code_guides.svg" />
+      </ion-col>
+      <zxing-scanner
+        #scanner
+        [formats]="['QR_CODE']"
+        [timeBetweenScans]="0"
+        [delayBetweenScanSuccess]="0"
+        *ngIf="isBrowser || isElectron"
+        (scanSuccess)="checkScan($event)"
+      ></zxing-scanner>
+    </ion-row>
+
+    <ion-row
+      *ngIf="(hasCameraPermission | async) === false"
+      class="row--height__100 ion-justify-content-center ion-align-items-center"
+      (click)="requestPermission()"
+    >
+      <ion-col class="ion-text-center">
+        <img src="../assets/img/permission_onboarding_camera.svg" />
+        <h3 class="ion-padding-horizontal" [innerHTML]="'tab-scan.empty-state_heading' | translate"></h3>
+        <ion-button shape="round" color="primary">{{ 'tab-scan.grant-permission_label' | translate }}</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

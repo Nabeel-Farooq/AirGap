@@ -1,0 +1,20 @@
+<ion-row class="rawdata--container ion-padding-bottom" *ngIf="_messages[0]">
+  <ion-col class="ion-no-padding">
+    <p>{{ 'message-signing-request.payload_label' | translate }}</p>
+    <pre class="ion-no-margin">{{ _messages[0].data | json }}</pre>
+  </ion-col>
+</ion-row>
+<ion-row class="rawdata--container" *ngIf="_messages[0].blake2bHash">
+  <ion-col class="ion-no-padding">
+    <p>{{ 'message-signing-request.blake2b_hash' | translate }}</p>
+    <pre class="ion-no-margin">{{ _messages[0].blake2bHash }}</pre>
+  </ion-col>
+</ion-row>
+<ion-row class="ion-padding-top" *ngIf="_messages[0]">
+  <ion-col class="ion-no-padding">
+    <ion-button expand="block" color="secondary" (click)="copyEncodedMessage()">
+      <ion-icon name="clipboard-outline" slot="start"></ion-icon>
+      {{ 'message-signing-request.copy_label' | translate }}
+    </ion-button>
+  </ion-col>
+</ion-row>

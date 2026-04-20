@@ -1,0 +1,131 @@
+// App Styles
+// ----------------------------------------------------------------------------
+// Put style rules here that you want to apply to the entire application. These
+// styles are for the entire app and not just one component. Additionally, this
+// file can hold Sass mixins, functions, and placeholder classes to be imported
+// and used throughout the application.
+
+/* styling for translations */
+.style__strong {
+  font-weight: bold;
+}
+.color__primary {
+  color: var(--ion-color-primary);
+}
+
+/* monotype */
+.typography--mono {
+  font-family: 'Courier New', Courier, 'Lucida Sans Typewriter', 'Lucida Typewriter', monospace;
+  font-weight: 600;
+  font-size: 14px;
+  word-wrap: break-word;
+}
+/* font weight - medium */
+.font--weight__med {
+  font-weight: 500;
+}
+/* forces the paragraph size */
+p {
+  font-size: 14px;
+}
+/* List styling */
+airgap-warning-modal,
+airgap-secret-rules {
+  ul {
+    padding-inline-start: 0;
+    list-style: none;
+    li:before {
+      content: '\00AC';
+      padding-right: 4px;
+    }
+  }
+}
+/* ion-textarea height fix */
+airgap-secret-import ion-textarea textarea {
+  height: inherit;
+}
+/* sets the identicon component size */
+airgap-identicon {
+  width: inherit;
+  height: inherit;
+  min-width: 48px;
+  min-height: 48px;
+}
+
+/* removes padding and adds it only if used in the tabs-accounts toolbar */
+airgap-current-secret {
+  ion-item {
+    --padding-start: 0;
+  }
+}
+airgap-accounts-list {
+  airgap-current-secret ion-item {
+    --padding-start: 16px;
+  }
+}
+/* ios specific styling */
+.ios {
+  airgap-account-item {
+    ion-item {
+      --padding-bottom: 4px;
+      --padding-top: 4px;
+    }
+  }
+  airgap-accounts-list {
+    ion-list {
+      padding-top: 8px;
+    }
+  }
+}
+
+.airgap-account-item-migration {
+  airgap-account-item {
+    ion-label {
+      .typography--mono {
+        color: var(--ion-color-light);
+      }
+    }
+  }
+}
+
+.airgap-currency-symbol-secret {
+  airgap-currency-symbol {
+    img {
+      width: 32px;
+      height: 32px;
+    }
+  }
+}
+
+.typography--mono {
+  ion-chip {
+    ion-label {
+      color: var(--ion-color-light);
+    }
+  }
+}
+
+.deserialized-content {
+  airgap-account-item {
+    ion-item {
+      ion-label {
+        .typography--mono {
+          color: var(--ion-color-light);
+        }
+      }
+    }
+  }
+}
+
+pre {
+  background-color: var(--ion-color-light);
+  color: var(--ion-color-dark);
+  padding: 8px;
+  white-space: pre-wrap; /* css-3 */
+  white-space: -moz-pre-wrap;
+  word-wrap: break-word;
+}
+
+.transparent {
+  --background: none transparent !important;
+}

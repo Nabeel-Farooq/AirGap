@@ -1,0 +1,95 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/tab-secrets"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{ 'wallet-select-coins.title' | translate }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-list lines="none" class="ion-padding-bottom">
+    <ion-item detail="false" class="ion-no-padding" *ngFor="let protocol of protocolList">
+      <ion-avatar slot="start" class="ion-align-items-center">
+        <airgap-currency-symbol
+          [symbol]="protocol.details.symbol"
+          [protocolIdentifier]="protocol.details.identifier"
+        ></airgap-currency-symbol>
+      </ion-avatar>
+      <ion-label class="ion-text-wrap">
+        <h2>
+          <span class="font--weight__med">{{ protocol.details.name }}</span>
+          {{ protocol.details.symbol }}
+        </h2>
+      </ion-label>
+      <ion-checkbox slot="end" value="protocol.protocol" [(ngModel)]="protocol.isChecked" (click)="onProtocolSelected()"></ion-checkbox>
+    </ion-item>
+  </ion-list>
+
+  <ion-list *ngIf="isAppAdvancedMode$ | async" lines="none">
+    <ion-item class="ion-no-padding">
+      <ion-label class="font--weight__med">{{ 'wallet-select-coins.advanced_label' | translate }}</ion-label>
+      <ion-toggle color="primary" slot="end" [(ngModel)]="isAdvancedMode" (ionChange)="onProtocolSelected()"></ion-toggle>
+    </ion-item>
+
+    <ng-container *ngIf="isAdvancedMode">
+      <ion-item class="ion-no-padding" *ngIf="isAdvancedMode" lines="full">
+        <ion-label position="stacked" color="primary">{{ 'wallet-select-coins.custom-path.label' | translate }}</ion-label>
+        <ng-container *ngIf="!singleSelectedProtocol">
+          <p>Derivation Path can only be set if one protocol is selected.</p>
+          <ng-container *ngIf="!singleSelectedProtocol">
+            <ion-input [disabled]="true" placeholder="{{ 'wallet-select-coins.custom-path.placeholder' | translate }}"></ion-input>
+          </ng-container>
+        </ng-container>
+        <ng-container *ngIf="singleSelectedProtocol">
+          <ion-input
+            [(ngModel)]="singleSelectedProtocol.customDerivationPath"
+            placeholder="{{ 'wallet-select-coins.custom-path.placeholder' | translate }}"
+          ></ion-input>
+        </ng-container>
+      </ion-item>
+
+      <ion-item
+        *ngIf="singleSelectedProtocol && singleSelectedProtocol.isHDWallet"
+        class="ion-no-padding"
+      >
+        {{ 'wallet-select-coins.select-type.hd-wallet_label' | translate }}
+        <ion-checkbox [(ngModel)]="singleSelectedProtocol.isHDWallet" (ionChange)="toggleHDWallet()" slot="end"></ion-checkbox>
+      </ion-item>
+
+      <ng-container *ngIf="isBip39PassphraseEnabled">
+        <ion-item class="ion-no-padding" *ngIf="isBip39PassphraseEnabled" lines="full">
+          <ion-label position="stacked" color="primary">BIP-39 Passphrase</ion-label>
+          <ion-input
+            [type]="revealBip39Passphrase ? 'text' : 'password'"
+            [(ngModel)]="bip39Passphrase"
+            placeholder="BIP-39 Passphrase"
+          ></ion-input>
+        </ion-item>
+<ion-item class="ion-no-padding ion-margin-bottom">
+          Reveal Passphrase
+          <ion-checkbox [(ngModel)]="revealBip39Passphrase" slot="end"></ion-checkbox>
+        </ion-item>
+      </ng-container>
+    </ng-container>
+  </ion-list>
+
+  <ion-card class="ion-padding" color="primary" (click)="goToIsolatedModule()">
+    <ion-row>
+      <ion-col>
+        <ion-icon style="zoom: 4" src="assets/icons/shapes.svg"></ion-icon>
+      </ion-col>
+      <ion-col size="9">
+        <ion-label class="ion-text-wrap">
+          <h2 style="color: black">{{ 'isolated-module.text' | translate }}</h2>
+        </ion-label>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-button [disabled]="!formValid" color="primary" shape="round" (click)="addWallet()">
+      {{ 'wallet-select-coins.create_label' | translate }}
+    </ion-button>
+  </ion-fab>
+</ion-content>

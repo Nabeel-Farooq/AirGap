@@ -1,0 +1,16 @@
+.warning-icon {
+  font-size: 4rem;
+}
+
+.word-break__all {
+  word-break: break-all;
+}
+
+.deserialized-content {
+  --margin-bottom: 32px;
+  margin-bottom: 32px;
+}
+
+ion-content {
+  --padding-bottom: var(--ion-padding, 64px);
+}

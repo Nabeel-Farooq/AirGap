@@ -1,0 +1,25 @@
+{
+	"appId": "it.airgap.vault",
+	"appName": "AirGap Vault",
+	"bundledWebRuntime": false,
+	"webDir": "www",
+	"plugins": {
+		"SplashScreen": {
+			"launchAutoHide": false,
+			"androidSplashResourceName": "screen"
+		}
+	},
+	"server": {
+		"androidScheme": "http"
+	},
+	"packageClassList": [
+		"AppPlugin",
+		"AppLauncherPlugin",
+		"ClipboardPlugin",
+		"FilesystemPlugin",
+		"SplashScreenPlugin",
+		"StatusBarPlugin",
+		"FilePickerPlugin",
+		"CDVPlugin"
+	]
+}

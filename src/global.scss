@@ -1,0 +1,94 @@
+// http://ionicframework.com/docs/theming/
+@import '~@ionic/angular/css/core.css';
+@import '~@ionic/angular/css/normalize.css';
+@import '~@ionic/angular/css/structure.css';
+@import '~@ionic/angular/css/typography.css';
+@import '~@ionic/angular/css/display.css';
+@import '~@ionic/angular/css/padding.css';
+@import '~@ionic/angular/css/float-elements.css';
+@import '~@ionic/angular/css/text-alignment.css';
+@import '~@ionic/angular/css/text-transformation.css';
+@import '~@ionic/angular/css/flex-utils.css';
+
+/* Center content vertically and horizontally */
+.content--align__center-center {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.d-flex {
+  display: flex;
+}
+
+/* FAB with a button, bottom padding fix for ios devices */
+.ios {
+  .can-go-back {
+    ion-fab.fab-vertical-bottom {
+      bottom: 24px;
+    }
+  }
+}
+
+/* FAB bottom padding fix for Android edge-to-edge display */
+.md {
+  ion-fab.fab-vertical-bottom {
+    bottom: env(safe-area-inset-bottom, 0px);
+  }
+}
+ion-label {
+  font-size: 12px;
+}
+
+/* Common Components styling */
+
+// from-to.component
+.from-to-line {
+  border-left: 1px solid var(--ion-color-light) !important;
+}
+
+.lifehash {
+  width: 64px;
+  height: 64px;
+  image-rendering: pixelated;
+}
+
+airgap-currency-symbol {
+  img {
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+  }
+}
+
+swiper-container {
+  --swiper-pagination-bullet-inactive-color: var(--ion-color-step-200, #cccccc);
+  --swiper-pagination-color: var(--ion-color-primary, #3880ff);
+  --swiper-pagination-progressbar-bg-color: rgba(var(--ion-text-color-rgb, 0, 0, 0), 0.25);
+  --swiper-scrollbar-bg-color: rgba(var(--ion-text-color-rgb, 0, 0, 0), 0.1);
+  --swiper-scrollbar-drag-bg-color: rgba(var(--ion-text-color-rgb, 0, 0, 0), 0.5);
+}
+
+swiper-slide {
+  display: flex;
+  position: relative;
+
+  flex-direction: column;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  height: 100%;
+
+  font-size: 18px;
+
+  text-align: center;
+  box-sizing: border-box;
+}
+
+swiper-slide img {
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: 100%;
+}
