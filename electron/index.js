@@ -1,119 +1,166 @@
-const { app, BrowserWindow, Menu, ipcMain, globalShortcut } = require('electron')
-const isDevMode = require('electron-is-dev')
-const { CapacitorSplashScreen, configCapacitor } = require('@capacitor/electron')
+const {
+  app,
+  BrowserWindow,
+  Menu,
+  globalShortcut,
+} = require('electron')
 
-const childProcess = require('child_process')
+const isDevMode = require('electron-is-dev')
+const {
+  CapacitorSplashScreen,
+  configCapacitor,
+} = require('@capacitor/electron')
+
 const path = require('path')
 
-// Place holders for our windows so they don't get garbage collected.
+// Window references
 let mainWindow = null
-
-// Placeholder for SplashScreen ref
 let splashScreen = null
 
-// Change this if you do not wish to have a splash screen
-let useSplashScreen = false
+// Enable/disable splash screen
+const USE_SPLASH_SCREEN = false
 
-// Create simple menu for easy devtools access, and for demo
-const menuTemplate = [
-  { role: 'appMenu', submenu: [{ role: 'quit' }] },
-  {
-    role: 'window',
-    submenu: [
-      { role: 'minimize' },
-      { label: 'Cut', accelerator: 'CmdOrCtrl+X', selector: 'cut:' },
-      { label: 'Copy', accelerator: 'CmdOrCtrl+C', selector: 'copy:' },
-      { label: 'Paste', accelerator: 'CmdOrCtrl+V', selector: 'paste:' }
-    ]
-  }
+// Shared menu items
+const editSubmenu = [
+  { role: 'minimize' },
+  { type: 'separator' },
+  { role: 'cut' },
+  { role: 'copy' },
+  { role: 'paste' },
 ]
-const menuTemplateDev = [
+
+// Production menu
+const productionMenu = Menu.buildFromTemplate([
   {
     role: 'appMenu',
-    submenu: [{ role: 'toggleDevTools' }, { role: 'quit' }]
+    submenu: [{ role: 'quit' }],
   },
   {
     role: 'window',
+    submenu: editSubmenu,
+  },
+])
+
+// Development menu
+const developmentMenu = Menu.buildFromTemplate([
+  {
+    role: 'appMenu',
     submenu: [
-      { role: 'minimize' },
-      { label: 'Cut', accelerator: 'CmdOrCtrl+X', selector: 'cut:' },
-      { label: 'Copy', accelerator: 'CmdOrCtrl+C', selector: 'copy:' },
-      { label: 'Paste', accelerator: 'CmdOrCtrl+V', selector: 'paste:' }
-    ]
-  }
-]
+      { role: 'toggleDevTools' },
+      { role: 'reload' },
+      { role: 'forceReload' },
+      { role: 'quit' },
+    ],
+  },
+  {
+    role: 'window',
+    submenu: editSubmenu,
+  },
+])
+
+function registerShortcuts() {
+  const blockedShortcuts = [
+    'CommandOrControl+R',
+    'CommandOrControl+Shift+R',
+    'F5',
+  ]
+
+  blockedShortcuts.forEach((shortcut) => {
+    globalShortcut.register(shortcut, () => {})
+  })
+}
+
+function unregisterShortcuts() {
+  globalShortcut.unregisterAll()
+}
 
 async function createWindow() {
-  // Define our main window size
   mainWindow = new BrowserWindow({
-    height: 920,
     width: 1600,
+    height: 920,
     show: false,
-    icon: path.join(__dirname, 'resources', 'icons', 'icon.png'),
+
+    icon: path.join(
+      __dirname,
+      'resources',
+      'icons',
+      'icon.png'
+    ),
+
     webPreferences: {
-      nodeIntegration: true,
-      preload: path.join(__dirname, 'node_modules', '@capacitor', 'electron', 'dist', 'electron-bridge.js')
-    }
+      preload: path.join(
+        __dirname,
+        'node_modules',
+        '@capacitor',
+        'electron',
+        'dist',
+        'electron-bridge.js'
+      ),
+
+      contextIsolation: true,
+      nodeIntegration: false,
+      sandbox: true,
+    },
   })
 
   configCapacitor(mainWindow)
 
+  // Set app menu
+  Menu.setApplicationMenu(
+    isDevMode ? developmentMenu : productionMenu
+  )
+
   if (isDevMode) {
-    // Set our above template to the Menu Object if we are in development mode, dont want users having the devtools.
-    Menu.setApplicationMenu(Menu.buildFromTemplate(menuTemplateDev))
-    // If we are developers we might as well open the devtools by default.
-    mainWindow.webContents.openDevTools()
+    mainWindow.webContents.openDevTools({
+      mode: 'detach',
+    })
   }
 
-  if (useSplashScreen) {
-    splashScreen = new CapacitorSplashScreen(mainWindow, {})
+  if (USE_SPLASH_SCREEN) {
+    splashScreen = new CapacitorSplashScreen(
+      mainWindow,
+      {}
+    )
+
     splashScreen.init(false)
   } else {
-    mainWindow.loadURL(`file://${__dirname}/app/index.html`)
-    mainWindow.webContents.on('dom-ready', () => {
+    await mainWindow.loadURL(
+      `file://${__dirname}/app/index.html`
+    )
+
+    mainWindow.once('ready-to-show', () => {
       mainWindow.show()
     })
   }
 
-  if (!isDevMode) {
-    Menu.setApplicationMenu(Menu.buildFromTemplate(menuTemplate))
-  }
+  mainWindow.on('focus', registerShortcuts)
 
-  mainWindow.on('focus', () => {
-    globalShortcut.registerAll(['CommandOrControl+R', 'CommandOrControl+Shift+R', 'F5'], () => {})
-  })
-
-  mainWindow.on('blur', () => {
-    globalShortcut.unregisterAll()
-  })
+  mainWindow.on('blur', unregisterShortcuts)
 
   mainWindow.on('closed', () => {
+    unregisterShortcuts()
     mainWindow = null
   })
 }
 
-// This method will be called when Electron has finished
-// initialization and is ready to create browser windows.
-// Some Electron APIs can only be used after this event occurs.
-app.on('ready', createWindow)
+// App ready
+app.whenReady().then(createWindow)
 
-// Quit when all windows are closed.
-app.on('window-all-closed', function () {
-  // On OS X it is common for applications and their menu bar
-  // to stay active until the user quits explicitly with Cmd + Q
+// macOS behavior
+app.on('activate', () => {
+  if (BrowserWindow.getAllWindows().length === 0) {
+    createWindow()
+  }
+})
+
+// Quit app when all windows are closed
+app.on('window-all-closed', () => {
   if (process.platform !== 'darwin') {
-    for (const [_, child] of childProcesses) {
-      child.kill()
-    }
-
     app.quit()
   }
 })
 
-app.on('activate', function () {
-  // On OS X it's common to re-create a window in the app when the
-  // dock icon is clicked and there are no other windows open.
-  if (mainWindow === null) {
-    createWindow()
-  }
+// Cleanup shortcuts before quit
+app.on('will-quit', () => {
+  globalShortcut.unregisterAll()
 })
